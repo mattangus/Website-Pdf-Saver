@@ -18,10 +18,10 @@ import base64
 # Change this URL if the website changes.
 URL = 'https://www.google.com/search?q=test'
 # Change this to change where the file should be saved. "." means this folder.
-DOWNLOAD_FOLDER = "."
+DOWNLOAD_FOLDER = "downloads"
 
 # set up the log file. It will append to the end.
-logging.basicConfig(filename='shoot.log',
+logging.basicConfig(filename='saver.log',
                     format="%(asctime)s [%(levelname)s] %(message)s",
                     datefmt='%Y-%m-%d %H:%M:%S',
                     level=logging.INFO)
@@ -130,7 +130,8 @@ def save_webpage(url, folder):
         "printBackground": True
     })
     
-    ouput = os.path.join(folder, datetime.datetime.now().strftime("%Y-%m-%d %H-%M-%S.pdf"))
+    os.makedirs(folder, exist_ok=True)
+    ouput = os.path.join(folder, datetime.datetime.now().strftime("%Y-%m-%d %H:%M-%S.pdf"))
     logging.info(f"saving file to '{ouput}'")
 
     with open(ouput, "wb") as f:
