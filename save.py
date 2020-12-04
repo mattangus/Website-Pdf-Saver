@@ -16,7 +16,7 @@ import zipfile
 import base64
 
 # Change this URL if the website changes.
-URL = 'https://www.gov.uk/guidance/coronavirus-covid-19-advice-for-uk-visa-applicants-and-temporary-uk-residents'
+URL = 'https://www.google.com/search?q=test'
 # Change this to change where the file should be saved. "." means this folder.
 DOWNLOAD_FOLDER = "."
 
